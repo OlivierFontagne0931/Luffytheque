@@ -9,7 +9,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Back HomePage !</Link>
+              <Link to="/"> 🫵🏻 👉🏻 BACK HOME 👈🏻 🔥 </Link>
             </li>
           </ul>
         </nav>

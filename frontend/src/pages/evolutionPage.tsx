@@ -9,20 +9,20 @@ export default function EvolutionPage() {
 
   useEffect(() => {
     async function fetchData() {
-      const rawData = await fetch(`http://localhost:5173/luffyevolution/${1}`);
+      const rawData = await fetch(`http://localhost:5173/luffyevolution/${id}`);
       const cleanData = (await rawData.json()) as luffytheque;
       setluffytheque(cleanData);
     }
     fetchData();
-  }, []);
+  }, [id]);
 
   if (luffytheque === null) {
-    return <p>Waiting for Luffythèque n°{1}...</p>;
+    return <p>Waiting for Luffythèque n°{id}...</p>;
   }
 
   return (
     <p>
-      {luffytheque.nom} (n°{1})
+      {luffytheque.nom} (n°{id})
     </p>
   );
 }

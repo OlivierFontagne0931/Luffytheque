@@ -29,7 +29,7 @@ app.get("/luffyevolution", async (req, res) => {
 
 app.get("/luffyevolution/:id", async (req, res) => {
   const { rows } = await db.query(
-    "SELECT id, nom, description, image FROM luffyevolution WHERE id=$1",
+    "SELECT id, nom, description, image FROM luffyevolution WHERE id=$4",
     [Number(req.params.id)],
   );
   res.json(rows[0]);
