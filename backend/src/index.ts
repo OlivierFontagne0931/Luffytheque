@@ -16,9 +16,30 @@ const db = new Pool({
   database: process.env.PG_DATABASE,
 });
 
-app.get("/luffytheque", async (req, res) => {
-  const { rows } = await db.query("SELECT * FROM luffytheque");
+app.get("/", (req, res) => {
+  res.json({ msg: "I'm HERE!" });
+});
+
+app.get("/luffyevolution", async (req, res) => {
+  const { rows } = await db.query(
+    "SELECT id, nom, description, image FROM luffyevolution",
+  );
   res.json(rows);
+});
+
+app.get("/luffyevolution/:id", async (req, res) => {
+  const { rows } = await db.query(
+    "SELECT id, nom, description, image FROM luffyevolution WHERE id=$1",
+    [Number(req.params.id)],
+  );
+  res.json(rows[0]);
+});
+
+app.delete("/luffyevolution/:id", async (req, res) => {
+  const { rows } = await db.query("DELETE FROM luffyevolution WHERE id=$4", [
+    Number(req.params.id),
+  ]);
+  res.json(rows[0]);
 });
 
 app.listen(PORT, () => {

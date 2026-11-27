@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react";
-
-type luffytheque = {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-};
+import { Link, Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage.tsx";
+import EvolutionPage from "./pages/evolutionPage.tsx";
 
 function App() {
-  const [evolutions, setluffytheque] = useState<luffytheque[]>([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const rawdata = await fetch("http://localhost:5173/luffytheque");
-      const data = await rawdata.json();
-      setluffytheque(data);
-    }
-    fetchData();
-  }, []);
-
   return (
     <>
-      <h1>Luffytheque</h1>
-      <ul>
-        {evolutions.map((luffytheque) => (
-          <li key={luffytheque.id}>{luffytheque.name}</li>
-        ))}
-      </ul>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Back HomePage !</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/:id" element={<EvolutionPage />} />
+      </Routes>
     </>
   );
 }

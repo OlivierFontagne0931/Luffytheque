@@ -20,8 +20,8 @@ Une page web qui affiche une carte pour chaque forme (évolution) de Luffy. En c
 # Technologies
 
 - VSCode, Git, GitHub, excalidraw, googleSheets, trello, canva
-- Front-end: React, vite, nodejs, css, typeScript
-- Back-end: Node ...
+- Front-end: React, vite, nodejs, css, typeScript, react-router
+- Back-end: Nodejs, express, postgreSQL, SQLelectron, Bruno
 
 ---
 
@@ -36,4 +36,6 @@ Une page web qui affiche une carte pour chaque forme (évolution) de Luffy. En c
 
 - 23/11/2026: Initialisation du projet: Frond-end, back-end et Readme.md
 - 24/11/2026: Suite de l'initialisation de projet, création d'une base de donnée, liaison de la base de donnée au back-end et création de la branche dev sur git et gitHub.
-- 25/11/2026: Liaison du frond-end au back-end et commit via la branche Dev.
+- 25/11/2026: Liaison du frond-end au back-end et commit via la branche Dev. Création de 'routes' dans le fichier app.tsx.
+- 26/11/2026: Création du dossier pages et des fichiers evolutionPage et HomePage.
+- 27/11/2026: Requête SQL "DELETE" dans le backend, création du dossier TYPE et du fichier luffytheque.ts pour typer toutes les pages via un import/export. Ajout d'un header dans app.tsx et d'un texte/lien ramenant à la HomePage.
